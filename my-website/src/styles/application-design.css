@@ -157,7 +157,7 @@ input:focus, select:focus, textarea:focus {
     margin-top: 20px;
     justify-content: center;
 }
-
+/* I styled the submit and reset buttons to create a visually appealing and consistent design with the rest of the website */
 .submit-btn {
     background: #2d5a8c;
     color: white;

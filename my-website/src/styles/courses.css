@@ -1,3 +1,6 @@
+/* Courses Section Styles */
+/* This CSS file styles the courses section of the website, including the layout, typography, and card design for individual courses. this also styles the boarders of the cards to create a more professional feel such as the padding board and the box shadow 
+especially the grid layout */
 .courses-section {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     padding: 80px 40px;
@@ -62,12 +65,13 @@
     font-weight: 300;
     position: relative;
 }
-
+/*if there ius an image that is not available for the course, this will be used as a placeholder to maintain the layout and design consistency of the course cards. 
+The placeholder uses a gradient background and a graduation cap emoji to visually represent the concept of education and courses. */
 .course-image-placeholder::before {
     content: '🎓';
     font-size: 48px;
 }
-
+/* If you have actual course images, you can use the .course-image class instead of the placeholder */
 .course-image {
     width: 100%;
     height: auto;
@@ -76,7 +80,7 @@
     object-position: center center;
     display: block;
 }
-
+/*course description, colour margin,padding for the card and the title of the course */
 .course-info {
     padding: 20px 22px 26px 22px;
 }
@@ -111,39 +115,4 @@
     font-size: 14px;
     line-height: 1.6;
     margin: 0 0 12px 0;
-}
-
-.course-info .cta-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.course-info .price {
-    font-weight: 700;
-    color: var(--blue-2);
-}
-
-.course-info .enroll-btn {
-    background: var(--blue-3);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .courses-section {
-        padding: 60px 20px;
-    }
-
-    .courses-container h2 {
-        font-size: 28px;
-    }
-
-    .courses-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
 }
