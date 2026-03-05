@@ -577,7 +577,7 @@ body {
     margin-top: auto;
     text-align: center;
 }
-/* i made the animation for the hover to make it see professional i also was about to make it go to another page when pressed but i didnt have time to*/
+/* i made the animation for the hover to make it see professional i also was about to make it go to another page when pressed but i didnt understand how*/
 .course-card a:hover {
     background-color: #0948bd;
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
@@ -669,4 +669,3 @@ body {
     line-height: 1.6;
     margin: 0;
 }
-
