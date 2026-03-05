@@ -1,4 +1,5 @@
-
+/* applicationbuttonsstyle.css */
+/*application buttons style*/
 form {
   max-width: 900px;
   margin: 20px auto;
@@ -19,8 +20,7 @@ label {
   font-weight: 600;
   color: #333;
 }
-
-
+/* Style for input fields and textarea email phone number ect*/
 input[type="text"],
 input[type="email"],
 textarea {

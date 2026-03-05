@@ -1,3 +1,4 @@
+/*navigation bar and top banner for the application page*/
 .navbar {
     position: sticky;
     top: 0;
@@ -83,7 +84,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(100, 181, 246, 0.4);
 }
-
+/* used to make the text at the top of the page bold and visible to the user */
 body {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -149,7 +150,7 @@ body {
     font-weight: 300;
 }
 
-
+/*this is where the application form is styled, the form is made to be user friendly and visually appealing*/
 .application-section {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     padding: 80px 40px;
@@ -263,7 +264,8 @@ form, .application-form-wrapper {
     flex-direction: column;
     margin-bottom: 25px;
 }
-
+/* this is where i began to style the form, the input fields are made to be full width and have a consistent look and feel, the focus state is also styled to make it clear to the user which field they are currently interacting with, this included drop down menus
+and buttons to upload files such as DOC DOCX and PDF */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -333,14 +335,14 @@ label {
     font-size: 14px;
     margin-bottom: 0;
 }
-
+/* this is where they wrote about themselves i changed the size of the box to make it more inlined with the other boxes and buttons*/
 #message {
     height: 120px !important;
     width: 100% !important;
     resize: none;
     font-family: 'Inter', sans-serif;
 }
-
+/*this is where i changed the size of the checkbox and the aligment of the text next to the checkbox, i also added a hover effect to make it more interactive for the user*/
 .checkbox-container {
     display: flex;
     flex-direction: column;
@@ -401,7 +403,7 @@ label {
     gap: 15px;
     margin-top: 30px;
 }
-
+/* this is where i styled the submit and reset buttons, the submit button has a gradient background and a hover effect that changes the background and adds a shadow, the reset button has a more subtle design with a border and a hover effect that changes the background and border color */
 .submit-btn,
 .reset-btn {
     padding: 13px 20px;
@@ -489,80 +491,3 @@ label {
     font-size: 14px;
 }
 
-@media (max-width: 768px) {
-    .application-section {
-        padding: 60px 20px;
-    }
-
-    .application-container {
-        max-width: 100%;
-    }
-
-    .application-container h2 {
-        font-size: 28px;
-    }
-
-    .form-wrapper {
-        padding: 25px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-
-    .form-group-buttons {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="file"],
-    textarea {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-
-    .submit-btn,
-    .reset-btn {
-        padding: 12px 15px;
-        font-size: 13px;
-    }
-
-    .hero {
-        padding: 60px 20px;
-        min-height: 300px;
-    }
-
-    .hero-content h1,
-    .hero-title {
-        font-size: 32px;
-    }
-
-    .description {
-        padding: 60px 20px;
-    }
-
-    .description-container {
-        padding: 0 20px;
-    }
-
-    .description h2 {
-        font-size: 28px;
-    }
-
-    .nav-container {
-        padding: 0 20px;
-        height: auto;
-        flex-wrap: wrap;
-    }
-    
-    .nav-links {
-        gap: 15px;
-        width: 100%;
-        margin-top: 15px;
-        flex-wrap: wrap;
-    }

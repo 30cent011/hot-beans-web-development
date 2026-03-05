@@ -1,11 +1,10 @@
-
-
+/* * Trainees Section Styles*/
 .employees-section {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     padding: 80px 40px;
     margin: 40px 0;
 }
-
+/* Container and Grid. i also made it so when a user hovers over it it is hilighed i made it into a gird format to improve on white space */
 .employees-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -51,7 +50,7 @@
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(13,110,253,0.18);
 }
-
+/* Employee Image and Info wiht a placeholder when the image fails to work which happens alot due to the college blocking images */
 .employee-image-placeholder {
     width: 150px;
     height: 150px;
@@ -81,7 +80,7 @@
     display: block;
     border-radius: 8px;
 }
-
+/* Employee Info name, job role, and job descrition i changed the colour margin font and size to make it aligned with all the other pages*/
 .employee-info {
     padding: 25px;
 }
@@ -110,17 +109,4 @@
     margin: 0;
 }
 
-@media (max-width: 768px) {
-    .employees-section {
-        padding: 60px 20px;
-    }
 
-    .employees-container h2 {
-        font-size: 28px;
-    }
-
-    .employees-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-}
