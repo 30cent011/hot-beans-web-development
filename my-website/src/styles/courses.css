@@ -1,17 +1,18 @@
-/* Courses Section Styles */
-/* This CSS file styles the courses section of the website, including the layout, typography, and card design for individual courses. this also styles the boarders of the cards to create a more professional feel such as the padding board and the box shadow 
-especially the grid layout */
+/* Main section for the courses page.
+   The gradient background helps separate this area from other pages. */
 .courses-section {
     background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
     padding: 80px 40px;
     margin: 40px 0;
 }
 
+/* Container that centers the content and limits the width */
 .courses-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Heading for the courses section with a decorative underline */
 .courses-container h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
@@ -23,6 +24,7 @@ especially the grid layout */
     padding-bottom: 15px;
 }
 
+/* Underline effect placed under the heading */
 .courses-container h2::after {
     content: '';
     position: absolute;
@@ -34,12 +36,16 @@ especially the grid layout */
     background: var(--blue-3);
 }
 
+/* Grid layout for the course cards.
+   Using auto-fit ensures the layout adjusts to screen size. */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
+/* Individual course card styling.
+   Rounded corners and shadows help the cards stand out. */
 .course-card {
     background: white;
     border-radius: 8px;
@@ -48,11 +54,14 @@ especially the grid layout */
     transition: all 0.3s ease;
 }
 
+/* Hover effect to make the cards feel interactive */
 .course-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(13,110,253,0.18);
 }
 
+/* Placeholder used when a course image is not available.
+   This keeps the layout consistent and visually balanced. */
 .course-image-placeholder {
     width: 100%;
     height: 160px;
@@ -65,13 +74,14 @@ especially the grid layout */
     font-weight: 300;
     position: relative;
 }
-/*if there ius an image that is not available for the course, this will be used as a placeholder to maintain the layout and design consistency of the course cards. 
-The placeholder uses a gradient background and a graduation cap emoji to visually represent the concept of education and courses. */
+
+/* Graduation cap emoji used as a visual indicator for courses */
 .course-image-placeholder::before {
     content: '🎓';
     font-size: 48px;
 }
-/* If you have actual course images, you can use the .course-image class instead of the placeholder */
+
+/* Optional class for real course images */
 .course-image {
     width: 100%;
     height: auto;
@@ -80,19 +90,14 @@ The placeholder uses a gradient background and a graduation cap emoji to visuall
     object-position: center center;
     display: block;
 }
-/*course description, colour margin,padding for the card and the title of the course */
+
+/* Container for the course text content */
 .course-info {
     padding: 20px 22px 26px 22px;
 }
 
-.course-info h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #1e3a5f;
-    margin: 0 0 8px 0;
-}
-
+/* Course title styling */
+.course-info h3,
 .course-title {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -101,6 +106,7 @@ The placeholder uses a gradient background and a graduation cap emoji to visuall
     margin: 0 0 8px 0;
 }
 
+/* Metadata such as platform or category */
 .course-info .meta {
     color: #64b5f6;
     font-weight: 600;
@@ -110,6 +116,7 @@ The placeholder uses a gradient background and a graduation cap emoji to visuall
     letter-spacing: 0.6px;
 }
 
+/* Course description text */
 .course-info .description {
     color: #666;
     font-size: 14px;

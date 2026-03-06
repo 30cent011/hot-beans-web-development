@@ -1,285 +1,229 @@
-/*global variables*/
+/* Resetting default spacing and ensuring consistent box sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Color variables used throughout the site for consistency */
 :root {
     --blue-1: #0a58ca;
-    --blue-2: #0d6efd; 
-    --blue-3: #64b5f6; 
-    --blue-4: #e9f5ff; 
+    --blue-2: #0d6efd;
+    --blue-3: #64b5f6;
+    --blue-4: #e9f5ff;
     --text-dark: #05203a;
 }
 
-/*gives a smooth feel*/
+/* Smooth scrolling makes navigation between sections feel more natural */
 html {
     scroll-behavior: smooth;
 }
-/*navigation bar, link layout and logo placement */
+
+/* Base styling for the whole page */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
+    font-family: 'Inter', sans-serif;
     background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
     min-height: 100vh;
 }
 
+/* Sticky navigation bar that stays visible while scrolling */
 .navbar {
     position: sticky;
     top: 0;
-    background: linear-gradient(90deg, var(--blue-1) 0%, var(--blue-2) 100%);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
+/* Container keeps navbar content centered and spaced correctly */
 .nav-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-    height: 70px;
 }
 
+/* Logo styling for brand visibility */
 .logo {
     font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-     height: 50px;
+    font-weight: bold;
+    color: #fff;
 }
 
+/* Navigation links arranged horizontally */
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
     gap: 35px;
-    align-items: center;
 }
 
-.nav-links a,
-.nav-buttons button {
-    color: white;
+/* Basic link styling with a hover underline animation */
+.nav-links a {
+    color: #fff;
     text-decoration: none;
-    font-size: 15px;
     font-weight: 500;
-    transition: all 0.3s ease;
     position: relative;
+    transition: 0.3s;
 }
 
+/* Underline animation appears on hover */
 .nav-links a::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--blue-3);
-    transition: width 0.3s ease;
+    background: var(--blue-3);
+    transition: width 0.3s;
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
 
+/* Buttons inside the navbar */
 .nav-buttons {
     display: flex;
-    flex-direction: row;
     gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
+/* Transparent buttons with a border that fills on hover */
 .nav-buttons button {
     padding: 10px 20px;
-    background-color: transparent;
-    border: 2px solid #64b5f6;
+    background: transparent;
+    border: 2px solid var(--blue-3);
     border-radius: 4px;
+    color: #fff;
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .nav-buttons button:hover {
-    background-color: #64b5f6;
-    color: #1e3a5f;
+    background: var(--blue-3);
+    color: var(--text-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(100, 181, 246, 0.4);
+    box-shadow: 0 4px 12px rgba(100,181,246,0.4);
 }
 
-/* used to make the text at the top of the page bold and visible to the user */
+/* Main hero banner with centered text */
 .hero {
-    background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+    background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
-    text-align: center;
-    color: white;
     min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(13,110,253,0.75);
-    z-index: 1;
-}
-
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.hero-content,
-.hero-overlay {
+    text-align: center;
+    color: #fff;
     position: relative;
-    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dark overlay improves text contrast on the hero section */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(13,110,253,0.75);
+}
+
+/* Ensures hero text stays above the overlay */
+.hero-content {
+    position: relative;
     max-width: 800px;
 }
 
-.hero-content h1,
-.hero-overlay h1 {
-    font-family: 'Trebuchet MS', sans-serif;
-    color: #ffffff;
+/* Main hero heading */
+.hero-content h1 {
     font-size: 48px;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    line-height: 1.2;
+    font-weight: bold;
     text-transform: capitalize;
 }
 
-/* i used this to create a line between the content to section off different areas in the page */
+/* Subtitle under the hero heading */
+.hero-subtitle {
+    margin-top: 15px;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* Section for general page descriptions */
 .description {
-    background-color: #ffffff;
+    background: #fff;
     padding: 80px 40px;
-    margin: 40px 0;
 }
 
 .description-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: auto;
 }
 
+/* Section heading with a colored underline */
 .description h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 36px;
-    font-weight: 700;
     color: var(--blue-2);
     margin-bottom: 30px;
-    position: relative;
     padding-bottom: 15px;
+    border-bottom: 4px solid var(--blue-1);
 }
 
-.description h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: var(--blue-1);
-}
-
+/* Paragraph styling for readable text blocks */
 .description p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
     margin-bottom: 20px;
     text-align: justify;
+    color: #555;
 }
 
-/* i used this on the about section in order for the application button to be more visible while keepinga clean look*/
-.footer {
-    background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
-    color: white;
-    text-align: center;
-    padding: 30px 40px;
-    margin-top: 60px;
-    font-size: 14px;
-}
-
-.footer-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-
-.hero-subtitle {
-    font-size: 18px;
-    color: #ffffff;
-    margin-top: 15px;
-    opacity: 0.95;
-    font-weight: 300;
-}
-
-/* this is the styling for the text in the about page which ilustrates thr things the developer can be doing */
+/* Opportunities section with a light background */
 .opportunities {
-    background-color: #f0f5fb;
+    background: #f0f5fb;
     padding: 80px 40px;
-    margin: 40px 0;
 }
 
 .opportunities-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: auto;
 }
 
+/* Centered heading with decorative underline */
 .opportunities h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 36px;
-    font-weight: 700;
+    text-align: center;
     color: var(--blue-2);
     margin-bottom: 50px;
-    text-align: center;
     position: relative;
-    padding-bottom: 15px;
 }
 
 .opportunities h2::after {
-    content: '';
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: var(--blue-1);
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--blue-1);
 }
-/* this is the styling for the oportunities card i used padding and shows to make it smooth and constant with the other pages that contain cards*/
+
+/* Grid layout for opportunity cards */
 .opportunity-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
+/* Individual card styling */
 .opp-card {
-    background: white;
+    background: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
 .opp-card:hover {
@@ -288,346 +232,152 @@ body {
 }
 
 .opp-card h3 {
-    font-size: 20px;
-    font-weight: 700;
     color: #667eea;
     margin-bottom: 15px;
 }
 
-.opp-card p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* this is for the application button in the about page cta is used to call a page and i made the styling of when it is pressed */
+/* Call‑to‑action section with centered text */
 .cta-section {
-    background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
+    background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
     text-align: center;
-    color: white;
+    color: #fff;
 }
 
-.cta-container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.cta-section h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.cta-section p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    opacity: 0.95;
-}
-
+/* CTA button styled to stand out */
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background-color: var(--blue-3);
-    color: #05203a;
-    text-decoration: none;
-    font-weight: 700;
+    background: var(--blue-3);
+    color: var(--text-dark);
     border-radius: 4px;
-    transition: all 0.3s ease;
-    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #9ecbff;
+    background: #9ecbff;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(13,110,253,0.25);
 }
 
-/* this is the look for the application button found at the bottom of the about page*/
-.apply-now {
-    background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
-    padding: 80px 40px;
-    text-align: center;
-    color: white;
-    height: 400px;
-    position: relative;
-}
-
-.apply-now-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    max-width: 700px;
-    width: 100%;
-}
-
-.apply-now h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.apply-now p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    opacity: 0.95;
-}
-
-/* the images used in the trainee profle page its width height display and gap to eachother*/
+/* Team profiles section */
 .team-profiles {
-    background-color: #ffffff;
+    background: #fff;
     padding: 80px 40px;
-    margin: 40px 0;
 }
 
 .profiles-container {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
+/* Profile card with left border accent */
 .profile-card {
     background: #f8f9fa;
     padding: 30px;
-    border-radius: 8px;
     border-left: 4px solid #667eea;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: 0.3s;
 }
 
 .profile-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.profile-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #667eea;
-    margin-bottom: 5px;
-}
-
-.profile-card .specialty {
-    color: #2927c2;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.profile-card .profile-bio {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.profile-card .skills {
-    font-size: 13px;
-    color: #333;
-    padding: 10px;
-    background: white;
-    border-radius: 4px;
-}
-
-/* this is for the application page ( the job types available thw text within the drop down menu */
-.job-positions {
-    background-color: #f0f5fb;
-    padding: 80px 40px;
-    margin: 40px 0;
-}
-
-.job-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.job-posting {
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.job-posting h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #667eea;
-    margin-bottom: 10px;
-}
-
-.job-posting .job-type {
-    color: #0a59cf;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.job-posting h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #0f6f96;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.job-posting ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.job-posting ul li {
-    padding: 8px 0;
-    color: #555;
-    position: relative;
-    padding-left: 20px;
-}
-
-.job-posting ul li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #667eea;
-    font-weight: bold;
-}
-
-/* this is the styling for the courses available the image size text and the layout of the cards i used grid not only for this but the trainee and job specs is to save on space*/
+/* Courses section */
 .courses-section {
-    background-color: #ffffff;
+    background: #fff;
     padding: 80px 40px;
-    margin: 40px 0;
 }
 
 .courses-container {
     max-width: 1100px;
-    margin: 0 auto;
-    margin-bottom: 60px;
+    margin: auto;
 }
 
+/* Courses heading with underline */
 .courses-container h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 28px;
-    font-weight: 700;
     color: #667eea;
-    margin-bottom: 40px;
-    padding-bottom: 15px;
     border-bottom: 2px solid #0860e4;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
 }
 
+/* Grid layout for course cards */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
 }
 
+/* Course card styling */
 .course-card {
     background: #f8f9fa;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     display: flex;
     flex-direction: column;
+    transition: 0.3s;
 }
 
 .course-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 8px 20px rgba(102,126,234,0.2);
 }
 
-.course-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #667eea;
-    margin-bottom: 10px;
-}
-
-.course-card .platform {
-    color: #114e9e;
-    font-weight: 600;
-    font-size: 12px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.course-card .description {
-    font-size: 13px;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 15px;
-    flex-grow: 1;
-}
-
-.course-card a {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #667eea;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 4px;
-    font-size: 13px;
-    transition: all 0.3s ease;
-    margin-top: auto;
-    text-align: center;
-}
-/* i made the animation for the hover to make it see professional i also was about to make it go to another page when pressed but i didnt understand how*/
-.course-card a:hover {
-    background-color: #0948bd;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-}
-/* this similar to the job-specs and courses howver this idenifies the size of the image the size of the text and colours i also made sure it was identical to the other code to make it easier for me to idenfify issues within the code*/
+/* Employees section */
 .employees-section {
-    background: linear-gradient(135deg, #f0f4f8 0%, #e3f2fd 100%);
+    background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
     padding: 80px 40px;
-    margin: 40px 0;
 }
 
 .employees-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
+/* Employees heading */
 .employees-container h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 36px;
-    font-weight: 700;
+    text-align: center;
     color: var(--blue-2);
     margin-bottom: 50px;
-    text-align: center;
     position: relative;
-    padding-bottom: 15px;
 }
 
 .employees-container h2::after {
-    content: '';
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: var(--blue-3);
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--blue-3);
 }
 
+/* Grid layout for employee cards */
 .employees-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
+/* Employee card styling */
 .employee-card {
-    background: white;
+    background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
 .employee-card:hover {
@@ -635,37 +385,26 @@ body {
     box-shadow: 0 8px 20px rgba(13,110,253,0.18);
 }
 
+/* Employee image */
 .employee-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    display: block;
 }
 
+/* Employee info section */
 .employee-info {
     padding: 20px;
 }
 
 .employee-info h3 {
-    font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    font-weight: 700;
     color: #1e3a5f;
-    margin: 0 0 8px 0;
 }
 
 .employee-info .role {
     color: #64b5f6;
-    font-weight: 600;
     font-size: 14px;
-    margin: 0 0 12px 0;
-    text-transform: uppercase;
+    font-weight: bold;
     letter-spacing: 1px;
-}
-
-.employee-info .description {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
 }
