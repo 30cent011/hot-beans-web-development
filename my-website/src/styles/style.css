@@ -1,11 +1,19 @@
-/* Resetting default spacing and ensuring consistent box sizing */
+/*
+Resetting spacing and trying to always maintain the same size of the box.
+Important in agency sites to provide custom interiors and third-party apparatuses.
+do not interrupt the flow of the containers.
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Color variables used throughout the site for consistency */
+/*
+Colors used in the site in a consistent fashion.
+Trust, reliability, and are embodied in a professional blue palette.
+technological authority ideal in case of B2B web development company.
+*/
 :root {
     --blue-1: #0a58ca;
     --blue-2: #0d6efd;
@@ -14,12 +22,20 @@
     --text-dark: #05203a;
 }
 
-/* Smooth scrolling makes navigation between sections feel more natural */
+/*
+The scrolling is smooth and easier to go through the sections.
+Improves UX of potential clients who switch between Services, Portfolio, etc.
+and "Contact Us" sections.
+*/
 html {
     scroll-behavior: smooth;
 }
 
-/* Base styling for the whole page */
+/*
+Global page style.
+The use of Inter gives it a contemporary, sleek and very readable design.
+typical of the high-end SaaS and tech agency interfaces.
+*/
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f8f9fa;
@@ -28,7 +44,11 @@ body {
     min-height: 100vh;
 }
 
-/* Sticky navigation bar that stays visible while scrolling */
+/*
+Staffy-looking navigation bar that is always present as one scrolls.
+Makes the call-to-action, either Get a Quote or Hire Us always there.
+available when the client goes through the business value proposition.
+*/
 .navbar {
     position: sticky;
     top: 0;
@@ -37,7 +57,11 @@ body {
     z-index: 1000;
 }
 
-/* Container keeps navbar content centered and spaced correctly */
+/*
+Container is used to ensure that the content on the navbar is centred and spaced properly.
+Unifies the horizontal centering of the ultra-wide monitors in use.
+by stakeholders on enterprise level.
+*/
 .nav-container {
     max-width: 1400px;
     margin: auto;
@@ -48,21 +72,33 @@ body {
     align-items: center;
 }
 
-/* Logo styling for brand visibility */
+/*
+Brand visibility logo style.
+The brand name dictates the business name that forms the cornerstone of the business.
+obviously in the upper-left visual priority zone.
+*/
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: #fff;
 }
 
-/* Navigation links arranged horizontally */
+/*
+Horizontal links of navigation.
+Divides the hierarchy of the site into Services, Case Studies, and About.
+a well-known, accessible design.
+*/
 .nav-links {
     list-style: none;
     display: flex;
     gap: 35px;
 }
 
-/* Basic link styling with a hover underline animation */
+/*
+The styling of a basic link with a hover underline effect.
+Dynamic feedback which demonstrates that the site is of high-performance, and
+attention-to-detail oriented.
+*/
 .nav-links a {
     color: #fff;
     text-decoration: none;
@@ -71,7 +107,11 @@ body {
     transition: 0.3s;
 }
 
-/* Underline animation appears on hover */
+/*
+When hovering, underline animation is applied.
+Minor things that hint at the current frontend functionality.
+to a prospective client.
+*/
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -87,13 +127,21 @@ body {
     width: 100%;
 }
 
-/* Buttons inside the navbar */
+/*
+Buttons inside the navbar.
+Placing primary conversions in strategic positions e.g. Client Portal.
+or "Consultation" links.
+*/
 .nav-buttons {
     display: flex;
     gap: 15px;
 }
 
-/* Transparent buttons with a border that fills on hover */
+/*
+Filled in border in hovering transparent buttons.
+Some kind of "Ghost Button" design that can achieve a secondary action and still not.
+diluting the call-to-action of the main hero.
+*/
 .nav-buttons button {
     padding: 10px 20px;
     background: transparent;
@@ -111,7 +159,11 @@ body {
     box-shadow: 0 4px 12px rgba(100,181,246,0.4);
 }
 
-/* Main hero banner with centered text */
+/*
+Banner of main hero with text in the centre.
+The first impression: this aims at making an instant declaration of the business.
+unique selling point (e.g., "We Build Digital Experiences").
+*/
 .hero {
     background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
@@ -124,7 +176,11 @@ body {
     align-items: center;
 }
 
-/* Dark overlay improves text contrast on the hero section */
+/*
+Dark overlay increases the contrast of the text in the hero section.
+Necessary to superimpose text on high-resolution project images or
+code-based abstract backgrounds.
+*/
 .hero::before {
     content: "";
     position: absolute;
@@ -132,27 +188,43 @@ body {
     background: rgba(13,110,253,0.75);
 }
 
-/* Ensures hero text stays above the overlay */
+/*
+Hero text position is kept above overlay.
+Deals with the stack of Z-index so as to keep the core 100% legible.
+business messaging.
+*/
 .hero-content {
     position: relative;
     max-width: 800px;
 }
 
-/* Main hero heading */
+/*
+Main hero heading.
+Bold typography that aims to attract and minimize the number of bounces.
+between mobile and desktop users.
+*/
 .hero-content h1 {
     font-size: 48px;
     font-weight: bold;
     text-transform: capitalize;
 }
 
-/* Subtitle under the hero heading */
+/*
+Going under the hero heading.
+Provides more detail on the headline, like Specializing in React, Node, and.
+Complete Startup Solutions.
+*/
 .hero-subtitle {
     margin-top: 15px;
     font-size: 18px;
     opacity: 0.95;
 }
 
-/* Section for general page descriptions */
+/*
+Bilbity on general page descriptions.
+A special section to define the philosophy, mission and of the agency.
+methodology (e.g., Agile or Waterfall).
+*/
 .description {
     background: #fff;
     padding: 80px 40px;
@@ -163,7 +235,11 @@ body {
     margin: auto;
 }
 
-/* Section heading with a colored underline */
+/*
+Heading of the part with a blue underline.
+To steer the eye of the reader, visual anchors have been used.
+With Us" narrative.
+*/
 .description h2 {
     font-size: 36px;
     color: var(--blue-2);
@@ -172,14 +248,22 @@ body {
     border-bottom: 4px solid var(--blue-1);
 }
 
-/* Paragraph styling for readable text blocks */
+/*
+Heading style of readable text blocks.
+Long-term structured to describe complex development processes.
+to non-technical clients.
+*/
 .description p {
     margin-bottom: 20px;
     text-align: justify;
     color: #555;
 }
 
-/* Opportunities section with a light background */
+/*
+Opportunities area that has a light background.
+Focuses on the screen "Career" or "Collaboration" paths, displaying that the agency
+is expanding and on the hunt after talent.
+*/
 .opportunities {
     background: #f0f5fb;
     padding: 80px 40px;
@@ -190,7 +274,11 @@ body {
     margin: auto;
 }
 
-/* Centered heading with decorative underline */
+/*
+Heading in the middle, with ornamental underline.
+Make break in page flow formal to become partners.
+opportunities.
+*/
 .opportunities h2 {
     font-size: 36px;
     text-align: center;
@@ -210,14 +298,22 @@ body {
     transform: translateX(-50%);
 }
 
-/* Grid layout for opportunity cards */
+/*
+Opportunity cards grid.
+Presents multiple positions (e.g. Frontend Dev, UX Designer) effectively.
+is not obstructive of the vertical space.
+*/
 .opportunity-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-/* Individual card styling */
+/*
+Individual card styling.
+Summary or package job descriptions or service levels into a set,
+organized modules.
+*/
 .opp-card {
     background: #fff;
     padding: 30px;
@@ -236,7 +332,11 @@ body {
     margin-bottom: 15px;
 }
 
-/* Call‑to‑action section with centered text */
+/*
+Centered text call to action section.
+High conversion Closing section meant to convert a passing visitor.
+into a lead having seen the value.
+*/
 .cta-section {
     background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
     padding: 80px 40px;
@@ -244,7 +344,11 @@ body {
     color: #fff;
 }
 
-/* CTA button styled to stand out */
+/*
+CTA button in fashionable style.
+Decision Button--high, bright and contrasting to push the buttons.
+optimal clicks to the contact form.
+*/
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
@@ -262,7 +366,11 @@ body {
     box-shadow: 0 6px 20px rgba(13,110,253,0.25);
 }
 
-/* Team profiles section */
+/*
+Team profiles section.
+Makes the agency more human with the displaying of the developers and designers.
+behind the code.
+*/
 .team-profiles {
     background: #fff;
     padding: 80px 40px;
@@ -276,7 +384,11 @@ body {
     gap: 30px;
 }
 
-/* Profile card with left border accent */
+/*
+Profile card with accent to the left.
+There is a professional touch that adds structure to individual bios, highlighting.
+proficiency such as Lead Architect or Project Manager.
+*/
 .profile-card {
     background: #f8f9fa;
     padding: 30px;
@@ -290,7 +402,11 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* Courses section */
+/*
+Courses section.
+Establishes the business as an expert in the industry by providing.
+in house training or outward facing dev workshops.
+*/
 .courses-section {
     background: #fff;
     padding: 80px 40px;
@@ -301,7 +417,10 @@ body {
     margin: auto;
 }
 
-/* Courses heading with underline */
+/*
+Underline heading of courses.
+Marks out the education resources or documentation.
+*/
 .courses-container h2 {
     font-size: 28px;
     color: #667eea;
@@ -310,14 +429,22 @@ body {
     margin-bottom: 40px;
 }
 
-/* Grid layout for course cards */
+/*
+Grid layout for course cards.
+Shows the training on the tech stack, e.g. the training on CSS Grid mastery.
+or "Secure API Integration."
+*/
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* Course card styling */
+/*
+Course card styling.
+Offers a card-based, clean interface where one can easily browse.
+learning modules.
+*/
 .course-card {
     background: #f8f9fa;
     padding: 25px;
@@ -333,7 +460,11 @@ body {
     box-shadow: 0 8px 20px rgba(102,126,234,0.2);
 }
 
-/* Employees section */
+/*
+Employees section.
+A closer examination of the staff, handy to the client confidence as well as to the other staff members.
+recruitment branding.
+*/
 .employees-section {
     background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
     padding: 80px 40px;
@@ -344,7 +475,10 @@ body {
     margin: auto;
 }
 
-/* Employees heading */
+/*
+Employees heading.
+Strengthens the culture of the development agency which is the People-First.
+*/
 .employees-container h2 {
     font-size: 36px;
     text-align: center;
@@ -364,14 +498,22 @@ body {
     transform: translateX(-50%);
 }
 
-/* Grid layout for employee cards */
+/*
+Employee card grid layout.
+An elastic reactive design that expands with the agency staffing.
+more staff.
+*/
 .employees-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* Employee card styling */
+/*
+Employee card styling.
+Unifies the display of personnel members to a unified one.
+company image.
+*/
 .employee-card {
     background: #fff;
     border-radius: 8px;
@@ -385,14 +527,22 @@ body {
     box-shadow: 0 8px 20px rgba(13,110,253,0.18);
 }
 
-/* Employee image */
+/*
+Employee image.
+Professional portraits that help to create a face-name association.
+with clients.
+*/
 .employee-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-/* Employee info section */
+/*
+Employee info section.
+Outlines the kind of tech stack each developer is an expert with.
+in (e.g. leadership, UIX ).
+*/
 .employee-info {
     padding: 20px;
 }
